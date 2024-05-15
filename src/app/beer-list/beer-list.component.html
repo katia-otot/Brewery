@@ -1,0 +1,20 @@
+<h1>Menú</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Precio</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pizza of pizzas">
+            <td><img [src]="pizza.imagen" alt="{{ pizza.nombre }}"></td>
+            <td>{{pizza.nombre}}</td>
+            <td>{{pizza.tipo}}</td>
+            <td>{{pizza.precio}}</td>
+         </tr> 
+    </tbody>
+</table>
