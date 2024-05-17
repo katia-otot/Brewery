@@ -10,11 +10,21 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let pizza of pizzas">
+        @for (pizza of pizzas; track pizza.nombre){
+        <tr>
             <td><img [src]="pizza.imagen" alt="{{ pizza.nombre }}"></td>
             <td>{{pizza.nombre}}</td>
             <td>{{pizza.tipo}}</td>
-            <td>{{pizza.precio}}</td>
+            <td>{{pizza.precio | currency}}</td>
+            @if (pizza.stock == 0){
+                <td class="badge text-bg-danger">Sin stock</td>
+            }
          </tr> 
+        } @empty {
+            <tr>
+                <td colspan="4">No hay cervezas para mostrar</td>
+            </tr>
+        }
     </tbody>
 </table>
+ 
