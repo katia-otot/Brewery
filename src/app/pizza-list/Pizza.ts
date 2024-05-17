@@ -4,5 +4,6 @@ export interface Pizza{
     precio : number;
     stock : number,
     imagen : string;
+    cantidad : number;
    // oferta : boolean;
 }

@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { PizzaListComponent } from './pizza-list/pizza-list.component';
 import { CarritoComprasComponent } from './carrito-compras/carrito-compras.component';
 
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +16,8 @@ import { CarritoComprasComponent } from './carrito-compras/carrito-compras.compo
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

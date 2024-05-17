@@ -6,6 +6,8 @@
             <th>Nombre</th>
             <th>Tipo</th>
             <th>Precio</th>
+            <th>Stock</th>
+            <th>Compra</th>
 
         </tr>
     </thead>
@@ -17,12 +19,24 @@
             <td>{{pizza.tipo}}</td>
             <td>{{pizza.precio | currency}}</td>
             @if (pizza.stock == 0){
-                <td class="badge text-bg-danger">Sin stock</td>
+                <td><span class="badge text-bg-danger">Sin stock</span></td>
+            }@else {
+                {{pizza.stock}}
             }
+            <td>
+                <button class="btn btn-success btn-sm" (click)="downCantidad(pizza)">-</button>
+                <input 
+                    type="number" 
+                    [(ngModel)]="pizza.cantidad"
+                    (keydown.enter)="validarCantidad($event, pizza)"
+                    min="0"
+                    [max]="pizza.stock">
+                <button class="btn btn-success btn-sm" (click)="upCantidad(pizza)">+</button>
+            </td>
          </tr> 
         } @empty {
             <tr>
-                <td colspan="4">No hay cervezas para mostrar</td>
+                <td colspan="4">No hay pizzas para mostrar</td>
             </tr>
         }
     </tbody>

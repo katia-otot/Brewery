@@ -13,6 +13,7 @@ export class PizzaListComponent {
     "precio" : 2343, 
     "stock" : 5,
     "imagen" : "assets/img/napolitana.jpg",
+    "cantidad" : 0,
    // "oferta" : "true",
   },
     { "nombre": "Cuatro quesos",
@@ -20,6 +21,7 @@ export class PizzaListComponent {
     "precio" : 4000, 
     "stock" : 5,
     "imagen" : "assets/img/cuatro-quesos.jpg",
+    "cantidad" : 0,
    // "oferta" : "false",
   },
     { "nombre": "Margarita",
@@ -27,6 +29,7 @@ export class PizzaListComponent {
     "precio" : 4000, 
     "stock" : 0,
     "imagen" : "assets/img/margarita.jpg",
+    "cantidad" : 0,
    // "oferta" : "false",
   },
     
@@ -35,6 +38,7 @@ export class PizzaListComponent {
     "precio" : 4000, 
     "stock" : 5,
     "imagen" : "assets/img/fugazzeta.jpg", 
+    "cantidad" : 0,
    // "oferta" : "false",
   },
     { "nombre": "Calabresa",
@@ -42,6 +46,7 @@ export class PizzaListComponent {
     "precio" : 4000, 
     "stock" : 5,
     "imagen" : "assets/img/calabresa.jpg",
+    "cantidad" : 0,
    // "oferta" : "false",
   },
     { "nombre": "Verduras del campo",
@@ -49,8 +54,34 @@ export class PizzaListComponent {
     "precio" : 4000, 
     "stock" : 0,
     "imagen" : "assets/img/verduras.jpg",
+    "cantidad" : 0,
    // "oferta" : "false",
   }
 
-  ]
+  ];
+
+  upCantidad(pizza: Pizza) :void{
+    if(pizza.cantidad < pizza.stock){
+      pizza.cantidad++;
+    }
+   
+  }
+  downCantidad(pizza: Pizza) :void{
+    if(pizza.cantidad>0){
+      pizza.cantidad--;
+    }
+  }
+
+  validarCantidad($event: any, pizza: Pizza): void{
+    if ($event.key === 'Enter') {
+      const newCantidad = parseInt($event.target.value, 10);
+      if (isNaN(newCantidad) || newCantidad < 0) {
+        pizza.cantidad = 0;
+      } else if (newCantidad > pizza.stock) {
+        pizza.cantidad = pizza.stock;
+      } else {
+        pizza.cantidad = newCantidad;
+      }
+    }
+  }
 }
