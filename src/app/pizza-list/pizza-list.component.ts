@@ -73,7 +73,7 @@ export class PizzaListComponent {
   }
 
   validarCantidad($event: any, pizza: Pizza): void{
-    if ($event.key === 'Enter') {
+    //if ($event.key === 'Enter') {
       const newCantidad = parseInt($event.target.value, 10);
       if (isNaN(newCantidad) || newCantidad < 0) {
         pizza.cantidad = 0;
@@ -82,6 +82,6 @@ export class PizzaListComponent {
       } else {
         pizza.cantidad = newCantidad;
       }
-    }
+    //}
   }
 }

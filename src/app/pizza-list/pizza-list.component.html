@@ -28,7 +28,7 @@
                 <input 
                     type="number" 
                     [(ngModel)]="pizza.cantidad"
-                    (keydown.enter)="validarCantidad($event, pizza)"
+                    (keyup)="validarCantidad($event, pizza)"
                     min="0"
                     [max]="pizza.stock">
                 <button class="btn btn-success btn-sm" (click)="upCantidad(pizza)">+</button>
