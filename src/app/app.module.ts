@@ -9,6 +9,7 @@ import { CarritoComprasComponent } from './carrito-compras/carrito-compras.compo
 import { FormsModule } from '@angular/forms';
 import { BreweryContactoComponent } from './brewery-contacto/brewery-contacto.component';
 import { BreweryPizzasComponent } from './brewery-pizzas/brewery-pizzas.component';
+import { MasInfoComponent } from './mas-info/mas-info.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { BreweryPizzasComponent } from './brewery-pizzas/brewery-pizzas.componen
     PizzaListComponent,
     CarritoComprasComponent,
     BreweryContactoComponent,
-    BreweryPizzasComponent
+    BreweryPizzasComponent,
+    MasInfoComponent
   ],
   imports: [
     BrowserModule,
