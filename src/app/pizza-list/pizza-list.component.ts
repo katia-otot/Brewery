@@ -14,7 +14,7 @@ export class PizzaListComponent {
     "stock" : 5,
     "imagen" : "assets/img/napolitana.jpg",
     "cantidad" : 0,
-   // "oferta" : "true",
+   "oferta" : true,
   },
     { "nombre": "Cuatro quesos",
     "tipo" : "Vegetarania",
@@ -22,7 +22,7 @@ export class PizzaListComponent {
     "stock" : 5,
     "imagen" : "assets/img/cuatro-quesos.jpg",
     "cantidad" : 0,
-   // "oferta" : "false",
+   "oferta" : false,
   },
     { "nombre": "Margarita",
     "tipo" : "Vegetarania",
@@ -30,7 +30,7 @@ export class PizzaListComponent {
     "stock" : 0,
     "imagen" : "assets/img/margarita.jpg",
     "cantidad" : 0,
-   // "oferta" : "false",
+   "oferta" : false,
   },
     
     { "nombre": "Fugazzeta",
@@ -39,7 +39,7 @@ export class PizzaListComponent {
     "stock" : 5,
     "imagen" : "assets/img/fugazzeta.jpg", 
     "cantidad" : 0,
-   // "oferta" : "false",
+    "oferta" : false,
   },
     { "nombre": "Calabresa",
     "tipo" : "",
@@ -47,7 +47,7 @@ export class PizzaListComponent {
     "stock" : 5,
     "imagen" : "assets/img/calabresa.jpg",
     "cantidad" : 0,
-   // "oferta" : "false",
+  "oferta" : false,
   },
     { "nombre": "Verduras del campo",
     "tipo" : "Vegana",
@@ -55,7 +55,7 @@ export class PizzaListComponent {
     "stock" : 0,
     "imagen" : "assets/img/verduras.jpg",
     "cantidad" : 0,
-   // "oferta" : "false",
+   "oferta" : false,
   }
 
   ];

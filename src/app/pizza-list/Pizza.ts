@@ -5,5 +5,5 @@ export interface Pizza{
     stock : number,
     imagen : string;
     cantidad : number;
-   // oferta : boolean;
+    oferta : boolean;
 }

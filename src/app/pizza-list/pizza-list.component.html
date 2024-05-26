@@ -11,9 +11,10 @@
 
         </tr>
     </thead>
+   
     <tbody>
         @for (pizza of pizzas; track pizza.nombre){
-        <tr>
+        <tr [ngClass]="{'oferta': pizza.oferta}">
             <td><img [src]="pizza.imagen" alt="{{ pizza.nombre }}"></td>
             <td>{{pizza.nombre}}</td>
             <td>{{pizza.tipo}}</td>
