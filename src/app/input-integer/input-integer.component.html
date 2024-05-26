@@ -1,0 +1,8 @@
+<button class="btn btn-success btn-sm" (click)="downCantidad()">-</button>
+    <input 
+        type="number" 
+        [(ngModel)]="cantidad"
+        (keyup)="validarCantidad($event)"
+        min="0"
+        [max]="max">
+<button class="btn btn-success btn-sm" (click)="upCantidad()">+</button>

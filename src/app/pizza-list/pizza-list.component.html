@@ -25,14 +25,8 @@
                 {{pizza.stock}}
             }
             <td>
-                <button class="btn btn-success btn-sm" (click)="downCantidad(pizza)">-</button>
-                <input 
-                    type="number" 
-                    [(ngModel)]="pizza.cantidad"
-                    (keyup)="validarCantidad($event, pizza)"
-                    min="0"
-                    [max]="pizza.stock">
-                <button class="btn btn-success btn-sm" (click)="upCantidad(pizza)">+</button>
+                <app-input-integer [(cantidad)]="pizza.cantidad"
+                [max]="pizza.stock"></app-input-integer>
             </td>
          </tr> 
         } @empty {

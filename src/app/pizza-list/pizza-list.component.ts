@@ -59,27 +59,5 @@ export class PizzaListComponent {
   }
 
   ];
-
-  upCantidad(pizza: Pizza) :void{
-    if(pizza.cantidad < pizza.stock){
-      pizza.cantidad++;
-    }
-   
-  }
-  downCantidad(pizza: Pizza) :void{
-    if(pizza.cantidad>0){
-      pizza.cantidad--;
-    }
-  }
-
-  validarCantidad($event: any, pizza: Pizza): void{
-      const newCantidad = parseInt($event.target.value, 10);
-      if (isNaN(newCantidad) || newCantidad < 0) {
-        pizza.cantidad = 0;
-      } else if (newCantidad > pizza.stock) {
-        pizza.cantidad = pizza.stock;
-      } else {
-        pizza.cantidad = newCantidad;
-      }
-  }
+ 
 }
