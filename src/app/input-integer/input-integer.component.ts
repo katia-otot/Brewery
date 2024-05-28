@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Pizza } from '../pizza-list/Pizza';
+import { PizzaCarritoService } from '../pizza-carrito.service';
 
 
 @Component({
@@ -12,6 +13,7 @@ export class InputIntegerComponent {
   @Input() max! : number;
 
   @Output () cantidadChange : EventEmitter<number> = new EventEmitter<number>();
+ 
    
   upCantidad() :void{
     if(this.cantidad < this.max){
@@ -36,4 +38,6 @@ export class InputIntegerComponent {
     }
     this.cantidadChange.emit(this.cantidad);
   }
+  
+  
 }

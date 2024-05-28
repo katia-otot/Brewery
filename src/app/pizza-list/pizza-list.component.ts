@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Pizza } from './Pizza';
+import { PizzaCarritoService } from '../pizza-carrito.service';
 
 @Component({
   selector: 'app-pizza-list',
@@ -60,4 +61,12 @@ export class PizzaListComponent {
 
   ];
  
+  constructor(private carrito: PizzaCarritoService){
+  }
+
+  addToCarrito(pizza: Pizza):void{
+    this.carrito.addToCarrito(pizza);
+    pizza.stock -= pizza.cantidad;
+    pizza.cantidad = 0;
+  }
 }
