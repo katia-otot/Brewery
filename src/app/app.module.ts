@@ -11,6 +11,7 @@ import { BreweryContactoComponent } from './brewery-contacto/brewery-contacto.co
 import { BreweryPizzasComponent } from './brewery-pizzas/brewery-pizzas.component';
 import { MasInfoComponent } from './mas-info/mas-info.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
