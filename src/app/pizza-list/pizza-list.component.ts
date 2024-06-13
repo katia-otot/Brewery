@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Pizza } from './Pizza';
 import { PizzaCarritoService } from '../pizza-carrito.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-pizza-list',
@@ -60,13 +61,27 @@ export class PizzaListComponent {
   }
 
   ];
- 
-  constructor(private carrito: PizzaCarritoService){
+
+  carritoLista$: Observable<Pizza[]>;
+  
+  constructor(private carritoService: PizzaCarritoService){
+    this.carritoLista$ = carritoService.carritoLista.asObservable();
   }
 
   addToCarrito(pizza: Pizza):void{
-    this.carrito.addToCarrito(pizza);
-    pizza.stock -= pizza.cantidad;
+    this.carritoService.addToCarrito(pizza);
+    
     pizza.cantidad = 0;
+  }
+
+  getStock(pizza: Pizza): number {
+    let stock = pizza.stock;
+    this.carritoLista$.subscribe(carrito => {
+      const item = carrito.find(p => p.nombre === pizza.nombre);
+      if (item) {
+        stock -= item.cantidad;
+      }
+    });
+    return stock;
   }
 }

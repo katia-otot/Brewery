@@ -1,1 +1,9 @@
 <h1>Carrito de compras</h1>
+<ul>
+    @for (pizza of carritoLista$ | async ; track pizza.nombre )
+    {
+        <li>
+            {{pizza.nombre}} : {{pizza.cantidad}}
+        </li>
+    }
+</ul>
