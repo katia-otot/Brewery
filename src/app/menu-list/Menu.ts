@@ -1,6 +1,6 @@
-export interface Pizza{
+export interface Menu{
     nombre : string;
-    tipo : string;
+    tipo: 'p' | 'b' | 'po';
     precio : number;
     stock : number,
     imagen : string;

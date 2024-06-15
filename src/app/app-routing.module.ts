@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BreweryPizzasComponent } from './brewery-pizzas/brewery-pizzas.component';
+import { BreweryMenusComponent } from './brewery-menus/brewery-menus.component';
 import { BreweryContactoComponent } from './brewery-contacto/brewery-contacto.component';
 
 const routes: Routes = [
-  {path: '', redirectTo:'pizzas',pathMatch:'full'},
-  {path:'pizzas', component: BreweryPizzasComponent},
+  {path: '', redirectTo:'menus',pathMatch:'full'},
+  {path:'menus', component: BreweryMenusComponent},
   {path:'contacto', component: BreweryContactoComponent},
 ];
 

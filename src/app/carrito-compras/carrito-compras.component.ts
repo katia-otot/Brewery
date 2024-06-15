@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { PizzaCarritoService } from '../pizza-carrito.service';
-import { Pizza } from '../pizza-list/Pizza';
+import { MenuCarritoService } from '../menu-carrito.service';
+import { Menu } from '../menu-list/Menu';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,9 +10,9 @@ import { Observable } from 'rxjs';
 })
 export class CarritoComprasComponent {
 
-  carritoLista$: Observable<Pizza[] | undefined>;
+  carritoLista$: Observable<Menu[] | undefined>;
 
-  constructor(private carrito: PizzaCarritoService){
+  constructor(private carrito: MenuCarritoService){
    this.carritoLista$ = carrito.carritoLista.asObservable();
   }
 }
