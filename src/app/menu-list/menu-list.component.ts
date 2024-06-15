@@ -44,8 +44,16 @@ export class MenuListComponent {
   }
 
   sortMenus(): void {
-    const order: { [key in Menu['tipo']]: number } = { 'p': 1, 'b': 2, 'po': 3 };
-    this.menus.sort((a, b) => order[a.tipo] - order[b.tipo]);
+    this.menus.sort((a,b) => {
+      return this.getOrdenByTipo(a.tipo) - this.getOrdenByTipo(b.tipo);
+    })
+  }
+
+  getOrdenByTipo(tipo: string) {
+    if(tipo == 'p') return 1;
+    if(tipo == 'b') return 2;
+    if(tipo == 'po') return 3;
+    return -1;
   }
 
   getHeader(tipo: 'p' | 'b' | 'po'): string {

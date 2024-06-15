@@ -1,9 +1,9 @@
 <h1>Carrito de compras</h1>
-<ul>
+<ul class="list-group">
     @for (menu of carritoLista$ | async ; track menu.nombre )
     {
-        <li>
-            {{menu.nombre}} : {{menu.cantidad}}
+        <li class="list-group-item d-flex d-flex justify-content-evenly align-items-center">
+            <img [src]="menu.imagen" alt="{{ menu.nombre }}" class="menu-img">{{menu.nombre}} : {{menu.cantidad}}
         </li>
     }
 </ul>

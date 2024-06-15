@@ -1,12 +1,11 @@
 <h1>Menú</h1>
 <table class="table">
     <thead>
-        <tr>
+        <tr class="hidden-column">
             <th>Imagen</th>
             <th>Nombre</th>
-            <th>Tipo</th>
+            <th class="hidden-column">Tipo</th>
             <th>Precio</th>
-            <th>Stock</th>
             <th>Cantidad</th>
             <th>Compra</th>
 
@@ -21,25 +20,22 @@
             <td colspan="7">
                 <h2>{{getHeader(menu.tipo)}}</h2>
             </td>
-        </tr>}
-        
+        </tr>}        
         <tr [ngClass]="{'oferta': menu.oferta}">
-            <td><img [src]="menu.imagen" alt="{{ menu.nombre }}"></td>
+            <td><img [src]="menu.imagen" alt="{{ menu.nombre }}" class="menu-img"></td>
             <td>{{menu.nombre}}</td>
-            <td>{{menu.tipo}}</td>
+            <td class="hidden-column">{{menu.tipo}}</td>
             <td>{{menu.precio | currency}}</td>
-            @if (getStock(menu) === 0){
-                <td><span class="badge text-bg-danger">Sin stock</span></td>
-            }@else {
-                {{getStock(menu)}}
-            }
             <td>
                 <app-input-integer [(cantidad)]="menu.cantidad"
                 [max]="getStock(menu)"></app-input-integer>
             </td>
-            <td>               
+
+            @if (getStock(menu) === 0){
+                <td><span class="badge text-bg-danger">Sin stock</span></td>
+            }@else {
                 <button class="btn btn-primary" (click)="addToCarrito(menu)">Agregar</button>
-            </td>
+            }
          </tr> 
         } @empty {
             <tr>
