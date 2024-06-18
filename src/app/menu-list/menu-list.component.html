@@ -1,5 +1,5 @@
 <h1>Menú</h1>
-<table class="table" class="menu">
+<table class="table menu">
     <thead>
         <tr class="hidden-column">
             <th>Imagen</th>
@@ -26,7 +26,7 @@
             <td>{{menu.nombre}}</td>
             <td class="hidden-column">{{menu.tipo}}</td>
             <td>{{menu.precio | currency}}</td>
-            <td>
+            <td class="d-flex align-items-center">
                 <app-input-integer [(cantidad)]="menu.cantidad"
                 [max]="getStock(menu)"></app-input-integer>
             </td>
@@ -34,7 +34,9 @@
             @if (getStock(menu) === 0){
                 <td><span class="badge text-bg-danger">Sin stock</span></td>
             }@else {
+            <td>
                 <button class="btn btn-primary" (click)="addToCarrito(menu)"  [disabled]="menu.cantidad === 0" >Agregar</button>
+            </td>
             }
          </tr> 
         } @empty {
@@ -43,10 +45,5 @@
             </tr>
         }
     </tbody>
-    <ng-template #loading>
-        <tr>
-            <td colspan="4">Cargando...</td>
-        </tr>
-    </ng-template>
 </table>
  

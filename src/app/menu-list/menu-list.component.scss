@@ -1,20 +1,3 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f2f2f2;
-    color: #333;
-    padding: 20px;
-}
-
-h1 {
-    color: #4CAF50;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h2 {
-    color: #4CAF50;
-    margin: 20px 0 10px;
-}
 
 .table {
     width: 100%;
@@ -36,7 +19,6 @@ h2 {
     background-color: #4CAF50;
     color: white;
 }
-
 .hidden-column {
     display: none;
 }
@@ -70,6 +52,28 @@ h2 {
 
 .btn-primary:hover {
     background-color: #45a049;
+}
+
+.btn-success {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-success:hover {
+    background-color: #4cae4c;
+}
+
+.btn-outline-secondary {
+    border-radius: 5px;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .badge {
