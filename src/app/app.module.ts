@@ -12,6 +12,8 @@ import { BreweryMenusComponent } from './brewery-menus/brewery-menus.component';
 import { MasInfoComponent } from './mas-info/mas-info.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PagarComponent } from './pagar/pagar.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     BreweryContactoComponent,
     BreweryMenusComponent,
     MasInfoComponent,
-    InputIntegerComponent
+    InputIntegerComponent,
+    PagarComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

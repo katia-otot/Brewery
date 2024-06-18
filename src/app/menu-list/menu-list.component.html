@@ -1,5 +1,5 @@
 <h1>Menú</h1>
-<table class="table">
+<table class="table" class="menu">
     <thead>
         <tr class="hidden-column">
             <th>Imagen</th>
@@ -21,7 +21,7 @@
                 <h2>{{getHeader(menu.tipo)}}</h2>
             </td>
         </tr>}        
-        <tr [ngClass]="{'oferta': menu.oferta}">
+        <tr [ngClass]="{'oferta': menu.oferta}" claas="menu-item">
             <td><img [src]="menu.imagen" alt="{{ menu.nombre }}" class="menu-img"></td>
             <td>{{menu.nombre}}</td>
             <td class="hidden-column">{{menu.tipo}}</td>
@@ -43,5 +43,10 @@
             </tr>
         }
     </tbody>
+    <ng-template #loading>
+        <tr>
+            <td colspan="4">Cargando...</td>
+        </tr>
+    </ng-template>
 </table>
  
