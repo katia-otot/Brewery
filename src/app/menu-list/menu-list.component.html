@@ -34,7 +34,7 @@
             @if (getStock(menu) === 0){
                 <td><span class="badge text-bg-danger">Sin stock</span></td>
             }@else {
-                <button class="btn btn-primary" (click)="addToCarrito(menu)">Agregar</button>
+                <button class="btn btn-primary" (click)="addToCarrito(menu)"  [disabled]="menu.cantidad === 0" >Agregar</button>
             }
          </tr> 
         } @empty {
