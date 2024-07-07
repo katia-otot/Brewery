@@ -1,5 +1,5 @@
 <h1>Menú</h1>
-<table class="table menu">
+<table class="table menu ">
     <thead>
         <tr class="hidden-column">
             <th>Imagen</th>
@@ -26,7 +26,7 @@
             <td>{{menu.nombre}}</td>
             <td class="hidden-column">{{menu.tipo}}</td>
             <td>{{menu.precio | currency}}</td>
-            <td class="d-flex align-items-center">
+            <td>
                 <app-input-integer [(cantidad)]="menu.cantidad"
                 [max]="getStock(menu)"></app-input-integer>
             </td>
